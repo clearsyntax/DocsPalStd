@@ -1,0 +1,14 @@
+BEAUTY PRODUCTS LANKA (PVT) LTD
+Report Name: Counterfoil
+Period : 11-Sep-2022  to  11-Oct-2022
+Run on : 10/11/2022 11:47:59 AM
+-------------------------------------------------------------------------------------------
+Sr  ,ChequeNo  ,Date      ,CheqDate  ,PayeeName                                   ,     ChequeAmt,  IsPrint , AC  ,Remarks   ,
+-------------------------------------------------------------------------------------------
+,  Bank and D. Name: Default Bank (For\nBeauty Products Lanka (Pvt) Ltd)
+-------------------------------------------------------------------------------------------
+1)  ,1234      ,11-Oct-22 ,07-Oct-22 ,test                                        ,        123.00,  N         ,Y    ,
+2)  ,12448     ,07-Oct-22 ,07-Oct-22 ,Chaminda                                    ,        125.00,  N         ,Y    ,
+3)  ,45678     ,11-Oct-22 ,11-Oct-22 ,c.p senadeera                               ,     12545.00,  N         ,Y    ,
+4)  ,55254     ,07-Oct-22 ,07-Oct-22 ,for testing                                 ,     12543.00,  N         ,Y    ,
+

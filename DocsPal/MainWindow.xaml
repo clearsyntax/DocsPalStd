@@ -1,0 +1,460 @@
+﻿<Window x:Class="DocWriter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Document Writer - (v2019.1)"  Height="657" Width="800" 
+        WindowStartupLocation="CenterScreen"
+        x:Name="frmMain" Unloaded="frmMain_Unloaded"
+        xmlns:dotNetKitControls="clr-namespace:DotNetKit.Windows.Controls;assembly=DotNetKit.Wpf.AutoCompleteComboBox"
+        >
+
+
+
+
+    <Grid  Margin="0,10,0,0" HorizontalAlignment="Stretch"   >
+        <TabControl x:Name="tabMenu"  Margin="0,5,0,0" GotFocus="TabControl_GotFocus_1" 
+                     Height="80" VerticalAlignment="Top">
+            <TabItem x:Name="tabItemHome" Header="Home" Width="70" HorizontalAlignment="Center" MouseDown="TabItem_MouseDown_1" VerticalAlignment="Top" >
+
+                <TabItem.Template>
+                    <ControlTemplate >
+                        <TextBlock  x:Uid="tabHdrTboxHome"  HorizontalAlignment="Stretch" Height="25" 
+                                    TextAlignment="Center" MouseDown="TabItem_MouseDown_1"  Background="#FFC3C3BE" >Home
+
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="Black"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red" />
+                                            <Setter Property="TextDecorations" Value="Underline" />
+                                        </Trigger>
+
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </ControlTemplate>
+                </TabItem.Template>
+
+                <Grid Background="#FFE5E5E5" Margin="0,-2,-3,2" >
+                    <Menu x:Name="menuHome" Height="40" VerticalAlignment="Top" Margin="2,3,0,0">
+                        <Button x:Name="menubtuHelp"  FontSize="15px" Height="35" Width="40"  >
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Help"/>
+                            </ToolTipService.ToolTip>
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\help.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                        <Button x:Name="manubtuSave" FontSize="15px"   Height="35" Width="40" Click="manubtuSave_Click">
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Save (F4)"/>
+                            </ToolTipService.ToolTip>
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\save.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="menubtuPageSetup"  FontSize="15px" Height="35" Width="40" Click="menubtuPageSetup_Click">
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Page Setup"/>
+                            </ToolTipService.ToolTip>
+
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\pageSetup.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button x:Name="menubtuSaveAndPrint" FontSize="15px" Height="35" Width="40" Click="menubtuSaveAndPrint_Click" >
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Save and Print"/>
+                            </ToolTipService.ToolTip>
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\saveAndPrint.jpg"/>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+
+                        <Button x:Name="menubtuPrint" FontSize="15px"  Height="35" Width="40" Click="menubtuPrint_Click" >
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Print"/>
+                            </ToolTipService.ToolTip>
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\print.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+
+                        <Button x:Name="menubtuSearch" FontSize="15px" Height="35" Width="40" Click="menubtuSearch_Click" >
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Search"/>
+                            </ToolTipService.ToolTip>
+
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\search.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+
+
+                        <Button x:Name="menubtuRefresh" FontSize="15px" Height="35" Width="40" Click="menubtuRefresh_Click" >
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Refresh"/>
+                            </ToolTipService.ToolTip>
+
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\Refresh-icon.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+
+
+
+                        <Button x:Name="menubtuPostDatedCheque" FontSize="15px" Height="35" Width="40" Click="menubtuPostDatedCheque_Click" >
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Post Dated Cheque"/>
+                            </ToolTipService.ToolTip>
+
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\PDCheque.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+
+
+                        <Button x:Name="menubtuCounterFoil" FontSize="15px" Height="35" Width="40" Click="menubtuCounterFoil_Click" >
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Counterfoil"/>
+                            </ToolTipService.ToolTip>
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\Counterfoil.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+
+                        <Button x:Name="menubtuExit" FontSize="15px" Height="35" Width="40" Click="menubtuExit_Click" >
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Exit"/>
+                            </ToolTipService.ToolTip>
+
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\exit.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                    </Menu>
+
+
+
+
+
+
+                </Grid>
+
+
+
+
+            </TabItem>
+
+
+            <TabItem x:Name="tabMenuTool" Header="Tools" Width="70" VerticalAlignment="Top">
+                <TabItem.Template>
+                    <ControlTemplate>
+                        <TextBlock HorizontalAlignment="Stretch" Height="25" TextAlignment="Center"   Background="#FFC3C3BE">Tools
+
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="Black"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red" />
+                                            <Setter Property="TextDecorations" Value="Underline" />
+                                        </Trigger>
+
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+
+
+                        </TextBlock>
+                    </ControlTemplate>
+                </TabItem.Template>
+
+                <Grid Background="#FFE5E5E5" VerticalAlignment="Top">
+                    <Menu x:Name="menuTools" Height="50" VerticalAlignment="Top" Margin="0,0,0,-22">
+                        <Button x:Name="mnuBtnDbMaint" FontSize="12px" ToolTip="Backup" Height="35" Width="40" Click="mnuBtnDbMaint_Click">
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Database Maintenance"/>
+                            </ToolTipService.ToolTip>
+
+
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\backup.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                        <Button x:Name="mnuBtnPrinterSetting" FontSize="11px" Height="35" Width="40" Click="mnuBtnPrinterSetting_Click">
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Printer Setting"/>
+                            </ToolTipService.ToolTip>
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\printersetting.jpg"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button x:Name="mnuBtnSetting" FontSize="11px" Height="35" Width="40" Click="mnuBtnSetting_Click">
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="Setting"/>
+                            </ToolTipService.ToolTip>
+
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\setting.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                            <TabControl Height="100" Width="100">
+                                <TabItem Header="TabItem">
+                                    <Grid Background="#FFE5E5E5"/>
+                                </TabItem>
+                                <TabItem Header="TabItem">
+                                    <Grid Background="#FFE5E5E5"/>
+                                </TabItem>
+                            </TabControl>
+                        </Button>
+
+                        <Button x:Name="mnuBtnLicenseInfo" FontSize="11px" Content="" Height="35" Width="40" Click="mnuBtnLicenseInfo_Click">
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="License Information"/>
+                            </ToolTipService.ToolTip>
+
+
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\licenseInfo.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+
+                    </Menu>
+
+                </Grid>
+            </TabItem>
+
+
+
+            <TabItem Header="About" Width="70" VerticalAlignment="Top">
+                <TabItem.Template>
+                    <ControlTemplate>
+                        <TextBlock HorizontalAlignment="Stretch" Height="25" TextAlignment="Center"  Background="#FFC3C3BE">About
+
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="Black"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red" />
+                                            <Setter Property="TextDecorations" Value="Underline" />
+                                        </Trigger>
+
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+
+
+                        </TextBlock>
+                    </ControlTemplate>
+                </TabItem.Template>
+
+                <Grid Background="#FFE5E5E5" VerticalAlignment="Top">
+                    <Menu x:Name="menuAbout" Height="50" VerticalAlignment="Top">
+                        <Button x:Name="mnuBtnAbout" FontSize="12px" ToolTip="About ClearSyntax" Height="35" Width="40">
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="14" Text="About"/>
+                            </ToolTipService.ToolTip>
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="Resources\about.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+
+                    </Menu>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="79,2,0,2" TextWrapping="Wrap" Text=""  Width="672" Height="43">
+                        
+                         Email: clearsyntax@outlook.com   
+                        
+
+                    </TextBlock>
+
+                </Grid>
+            </TabItem>
+
+
+
+        </TabControl>
+
+
+        <Canvas Height="78" VerticalAlignment="Top" Margin="0,83,0,0">
+            <Label Content="Pay To:"  FontSize="12" FontWeight="Normal" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="58"    Canvas.Left="12" Canvas.Top="8" HorizontalContentAlignment="Right"/>
+
+            <dotNetKitControls:AutoCompleteComboBox
+            
+            x:Name="cmbPayTo" FontSize="13" FontWeight="Normal" ToolTip="[F8] Delete Selected" DisplayMemberPath="PayeeName" SelectedValue="PayeeId"  IsEditable="True"  HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="410" Canvas.Left="74" Canvas.Top="8" SelectionChanged="cmbPayTo_SelectionChanged" KeyUp="cmbPayTo_KeyUp" KeyDown="cmbPayTo_KeyDown" LostFocus="cmbPayTo_LostFocus"
+
+                   TextSearch.TextPath="PayeeName"
+                >
+            </dotNetKitControls:AutoCompleteComboBox>
+
+            <Label Content="Amount:" FontSize="12" FontWeight="Normal" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="60" Canvas.Left="10" Canvas.Top="42" HorizontalContentAlignment="Right"/>
+            <TextBox x:Name="txtChequeAmt" FontSize="12" TextAlignment="Right" FontWeight="Normal" HorizontalAlignment="Left" Height="30"  Text="" VerticalAlignment="Top" Width="98" Canvas.Left="74" Canvas.Top="40" MaxLength="14" KeyUp="txtChequeAmt_KeyUp" LostFocus="txtChequeAmt_LostFocus" />
+            <TextBlock Text="Cheque No:" FontSize="12" FontWeight="Normal" HorizontalAlignment="Left"  Height="30" VerticalAlignment="Top" Width="49" Canvas.Left="176" Canvas.Top="42" TextWrapping="Wrap" TextAlignment="Right"  > </TextBlock>
+            
+            <ComboBox x:Name="cmbChqNo" FontSize="12" FontWeight="Normal" IsEditable="True" DisplayMemberPath="ChequeNo"  HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="98" Canvas.Left="230" Canvas.Top="41" SelectionChanged="cmbChqNo_SelectionChanged"/>
+            <Label Content="Date:" FontSize="12" FontWeight="Normal" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="40" Canvas.Left="338" Canvas.Top="42" HorizontalContentAlignment="Right"/>
+            <DatePicker x:Name="dtpChequeDate" HorizontalAlignment="Left" FontSize="12" FontWeight="Normal" Height="30" VerticalAlignment="Top" Width="106" Canvas.Left="378"  Canvas.Top="42" SelectedDateChanged="dtpChequeDate_SelectedDateChanged" LostFocus="dtpChequeDate_LostFocus">
+            </DatePicker>
+            <Label Content="Bank:" FontSize="12" HorizontalContentAlignment="Right"  FontWeight="Normal" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="49" Canvas.Left="506" Canvas.Top="8" />
+            <ComboBox x:Name="cmbBank" FontSize="12" FontWeight="Normal" IsEditable="False" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" DisplayMemberPath="BankName" Width="222" Canvas.Left="560" Canvas.Top="7" SelectionChanged="cmbBank_SelectionChanged"/>
+            <Label Content="Drawer:" Height="25"  HorizontalContentAlignment="Right"  Canvas.Left="504" Canvas.Top="43" Width="51"/>
+            <ComboBox x:Name="cmbDrawer" FontSize="12" FontWeight="Normal" IsEditable="False" DisplayMemberPath="DrawerName"  HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="222" Canvas.Left="560" Canvas.Top="40" SelectionChanged="cmbDrawer_SelectionChanged" LostFocus="cmbDrawer_LostFocus"/>
+
+
+
+        </Canvas>
+
+
+        <Canvas HorizontalAlignment="Left" Margin="7,168,0,0" Width="81" Height="341" VerticalAlignment="Top"  >
+            <Label Content="   X   |   Y" FontWeight="Normal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="68" Canvas.Left="5" Canvas.Top="5"/>
+
+            <TextBox x:Name="txtAcPayX" ToolTip="A/C Pay (X) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="100" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="30" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtAcPayY" ToolTip="A/C Pay (Y) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right" Text="10" Width="34" Height="24" VerticalAlignment="Top" Canvas.Left="40" Canvas.Top="30" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtDateX" ToolTip="Cheque Date (X) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="470" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="50" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtDateY" ToolTip="Cheque Date (Y) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right" Text="40" VerticalAlignment="Top" Width="34"  Canvas.Left="40" Canvas.Top="50" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtPaytoX" ToolTip="Pay to Name (X) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="40" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="70" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtPaytoY" ToolTip="Pay to Name (Y) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right" Text="100" VerticalAlignment="Top" Width="34"  Canvas.Left="40" Canvas.Top="70" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtAmtInWrdX" ToolTip="Amount in Word (X) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="30" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="90" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtAmtInWrdY" ToolTip="Amount in Word (Y) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right" Text="160" VerticalAlignment="Top" Width="34"  Canvas.Left="40" Canvas.Top="90" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtAmX" ToolTip="Amount (X) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="450" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="110" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtAmY" ToolTip="Amount (Y) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right" Text="150" VerticalAlignment="Top" Width="34"  Canvas.Left="40" Canvas.Top="110" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtForComNameX" ToolTip="For [Company Name] only (X) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="400" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="130" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtForComNameY" ToolTip="[Company Name] only (Y) , [F4] Save Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right" Text="250" VerticalAlignment="Top" Width="34"  Canvas.Left="40" Canvas.Top="130" KeyUp="txt_KeyUp"/>
+
+            
+            <TextBox x:Name="txtPayToWidth" ToolTip="Space Width (Pay to)" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="400" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="200" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtPayToStartSpace" ToolTip="Pay to Start Space" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="3" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="220" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtPaytoLineHeight" ToolTip="Pay to Line Height" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="30" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="240" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtAmtInWrdWidth" ToolTip="Area width (Amount in Word)" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="600" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="260" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtAmtInWrdTextPerLine" ToolTip="Text Per Line (Amount in Word)" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="38" VerticalAlignment="Top" Width="34"  Canvas.Left="40" Canvas.Top="260" KeyUp="txt_KeyUp"/>
+            <TextBox x:Name="txtAreaWidthDrawerName" ToolTip="Area width Drawer Name" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="328" VerticalAlignment="Top" Width="34"  Canvas.Left="40" Canvas.Top="280" KeyUp="txt_KeyUp"/>
+            
+
+            <TextBox x:Name="txtAmtInWrdStartSpace" ToolTip="Amount in Word Start Space" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="5" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="280" KeyUp="txt_KeyUp"/>
+
+            <TextBox x:Name="txtAmtInWrdLineHeight" ToolTip="Amount in Word Line Height" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="30" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="300" KeyUp="txt1_KeyUp"/>
+            <TextBox x:Name="txtDateDigitSpace" ToolTip="Date Digit Space , [F12] Default Page Settings" Foreground="White" Background="Black" HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" MaxLength="4" TextAlignment="Right"  Text="2" VerticalAlignment="Top" Width="34"  Canvas.Left="5" Canvas.Top="320" KeyUp="txt_KeyUp"/>
+
+        </Canvas>
+
+
+        <DockPanel Margin="94,171,0,10">
+
+        <Canvas x:Name="canPrintArea" Background="LightBlue" Width="642"  Height="320" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,68" >
+
+            <TextBlock x:Name="tblockDay1" Height="28" Canvas.Left="0" Canvas.Top="0" TextWrapping="NoWrap" Text="D"  TextAlignment="Right" Width="30" FontFamily="Tahoma" FontSize="16"/>
+            <TextBlock x:Name="tblockDay2" Height="28" Canvas.Left="0" Canvas.Top="0" TextWrapping="NoWrap" Text="D" TextAlignment="Right" Width="30" FontFamily="Tahoma" FontSize="16"/>
+            <TextBlock x:Name="tblockMonth1" Height="28" Canvas.Left="0" Canvas.Top="0" TextWrapping="NoWrap" TextAlignment="Right"  LineHeight="30" Text="M"  Width="35" FontFamily="Tahoma" FontSize="16"/>
+            <TextBlock x:Name="tblockMonth2" Height="28" Canvas.Left="0" Canvas.Top="0" TextWrapping="NoWrap" TextAlignment="Right"  LineHeight="30" Text="M"  Width="35" FontFamily="Tahoma" FontSize="16"/>
+            <TextBlock x:Name="tblockYear1" Height="28" Canvas.Left="0" Canvas.Top="0" TextWrapping="NoWrap"  TextAlignment="Right"  LineHeight="30" Text="Y"   Width="35" FontFamily="Tahoma" FontSize="16"/>
+            <TextBlock x:Name="tblockYear2" Height="28" Canvas.Left="0" Canvas.Top="0" TextWrapping="NoWrap"  TextAlignment="Right"  LineHeight="30" Text="Y"   Width="35" FontFamily="Tahoma" FontSize="16"/>
+            <TextBlock x:Name="tblockPayTo" Background="White" Height="61" Canvas.Left="0" Canvas.Top="0" TextWrapping="Wrap" LineHeight="30" Text=""  Width="438" FontFamily="Tahoma" FontSize="14"/>
+            <TextBlock x:Name="tblockAmtInWord" Background="White"  Height="93" Canvas.Left="0" Canvas.Top="0" TextWrapping="Wrap" LineHeight="30" Text="Amount in Word"   Width="438" FontFamily="Tahoma" FontSize="14"></TextBlock>
+            <TextBlock x:Name="tblockAmt" Background="White" Height="39" Canvas.Left="0" Canvas.Top="0" TextWrapping="Wrap" LineHeight="30" Text="Amount"  Width="151" FontFamily="Tahoma" TextAlignment="Right" FontSize="14"/>
+            <TextBlock x:Name="tblockAcPayeeOnly" Background="White" Canvas.Left="0" Canvas.Top="0" Height="48" TextAlignment="Center" TextWrapping="Wrap"   Width="108" Text="" FontSize="11" FontFamily="Tahoma"/>
+            <TextBlock x:Name="tblockForCompanyName" Background="White" Height="65" Canvas.Left="0" Canvas.Top="0" TextWrapping="Wrap" LineHeight="10" Text="for [Company Name]" TextAlignment="Left"  Width="350" FontFamily="Tahoma" FontSize="13"/>
+
+
+
+            </Canvas>
+        </DockPanel>
+        
+        
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Margin="93,165,0,107" Stroke="Black" Width="1"/>
+        <Label Content="V" HorizontalAlignment="Left" Margin="85,0,0,89" Width="19" Height="32" VerticalAlignment="Bottom" FontSize="12" FontWeight="Normal"/>
+        <Label Content="Y" HorizontalAlignment="Left" Margin="84,0,0,71" Width="19" Height="36" VerticalAlignment="Bottom" FontSize="12" FontWeight="Normal" />
+        <Rectangle Fill="Black" Height="1" Margin="93,165,30,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Label Content="V" FontSize="12" FontWeight="Normal"  Height="31" Margin="0,146,20,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90.017"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="X" FontSize="12" FontWeight="Normal" Height="31" Margin="0,152,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="25"/>
+
+
+        <StatusBar VerticalAlignment="Bottom" Margin="0,0,0,1" Height="27" BorderThickness="0" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
+            <TextBlock x:Name="tbxStatus" Width="116">Status</TextBlock>
+            <TextBlock x:Name="tbxMessage" Height="17" Width="377"></TextBlock>
+            <TextBlock x:Name="tbxVersion" Height="17" Width="82"></TextBlock>
+            <TextBlock x:Name="tbxLastEntryDate" Height="17" Width="191"></TextBlock>
+        </StatusBar>
+        <Canvas Margin="0,0,0,32" Height="45" VerticalAlignment="Bottom">
+            <Label Content="Remarks:" FontSize="12" FontWeight="Normal" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="60" Canvas.Left="1" Canvas.Top="7" HorizontalContentAlignment="Right"/>
+            <TextBox x:Name="txtRemarks" FontSize="12" TextAlignment="Left" FontWeight="Normal" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151" Canvas.Left="62" Canvas.Top="8" MaxLength="20" />
+            <CheckBox x:Name="chkAcPayeeOnly" Content="A/C Payee Only" Height="15" IsChecked="True" Canvas.Left="236" Width="111" Click="chkAcPayeeOnly_Click" Canvas.Top="15" />
+            <CheckBox x:Name="chkForCompanyName" Content="Drawer Name" IsChecked="True" Height="20"  Canvas.Left="450" Width="111" Click="chkForCompanyName_Click" Canvas.Top="13"/>
+            <CheckBox x:Name="chkCapsLock" Content="Caps Lock" IsChecked="True" Height="20"  Canvas.Left="352" Canvas.Top="15" Width="93" Click="chkCapsLock_Click" />
+            <CheckBox x:Name="chkWithDate" IsChecked="True" Canvas.Left="568" Canvas.Top="15" ToolTip="" Content="Print Cheque Date" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="132" Click="chkWithDate_Click" />
+
+
+
+        </Canvas>
+
+
+
+
+
+
+    </Grid>
+
+
+</Window>

@@ -1,0 +1,17 @@
+D:\Dropbox\REV_SPR\Project_DocWriter\DocWriterStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.exe.config
+D:\Dropbox\REV_SPR\Project_DocWriter\DocWriterStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.exe
+D:\Dropbox\REV_SPR\Project_DocWriter\DocWriterStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.pdb
+D:\Dropbox\REV_SPR\Project_DocWriter\DocWriterStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.exe
+D:\Dropbox\REV_SPR\Project_DocWriter\DocWriterStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.pdb
+D:\Dropbox\REV_SPR\Project_DocWriter\DocWriterStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.csprojResolveAssemblyReference.cache
+D:\CPKProjects\DocWriterStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.exe.config
+D:\CPKProjects\DocWriterStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.exe
+D:\CPKProjects\DocWriterStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.pdb
+D:\CPKProjects\DocWriterStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.csprojResolveAssemblyReference.cache
+D:\CPKProjects\DocWriterStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.exe
+D:\CPKProjects\DocWriterStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.pdb
+D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.exe.config
+D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.exe
+D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.pdb
+D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.exe
+D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.pdb
