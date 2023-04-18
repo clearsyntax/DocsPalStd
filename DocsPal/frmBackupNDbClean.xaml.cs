@@ -150,17 +150,32 @@ namespace DocWriter
         private void btnGetData_Click(object sender, RoutedEventArgs e)
         {
             listCheuqeDtl = new List<CheuqeDtl>();
-            lblMassage.Content = "Please wait...";
-            DateTime stdt=dtpDelDtaOlderThanDt.SelectedDate.Value;
-            Thread t = new Thread(() => {listCheuqeDtl= BL.getChequeList(BL.CompanyId, new DateTime(1900, 1, 1), stdt); });
-            t.Start();
-            
-            
-            Thread.Sleep(2000); 
-            
-            lblMassage.Content ="List item(s) : "+ listCheuqeDtl.Count().ToString();
+            //Thread t = new Thread(() => { lblMassage.Dispatcher.BeginInvoke((Action)(() => lblMassage.Content = GetData4Delete())); });
+            //Thread t = new Thread(GetData4Delete);
+            //t.Start();
+
             btnGetData.IsEnabled = false;
-            btnDelete.IsEnabled = true; 
+            lblMassage.Content = "Please wait...!";
+            listCheuqeDtl = BL.getChequeList(BL.CompanyId, new DateTime(1900, 1, 1), dtpDelDtaOlderThanDt.SelectedDate.Value);
+            lblMassage.Content = "List item(s) : " + listCheuqeDtl.Count().ToString();
+            btnDelete.IsEnabled = true;
+        }
+        private string GetData4Delete()
+        {
+            lblMassage.Dispatcher.BeginInvoke((Action)(() => lblMassage.Content = "Please wait...!"));
+            Thread.Sleep(2);
+            DateTime stdt = new DateTime (1999,1,1);
+            dtpDelDtaOlderThanDt.Dispatcher.BeginInvoke((Action)(() => stdt = dtpDelDtaOlderThanDt.SelectedDate.Value));
+            
+            listCheuqeDtl = BL.getChequeList(BL.CompanyId, new DateTime(1900, 1, 1), stdt);
+            
+            lblMassage.Dispatcher.BeginInvoke((Action)(() => lblMassage.Content = "List item(s) : " + listCheuqeDtl.Count().ToString()));
+            Thread.Sleep(2);
+            btnGetData.Dispatcher.BeginInvoke((Action)(() => btnGetData.IsEnabled =false));
+            btnDelete.Dispatcher.BeginInvoke((Action)(() => btnDelete.IsEnabled = true));
+
+            
+            return listCheuqeDtl.Count().ToString();
         }
 
         private void btnAbortDelete_Click(object sender, RoutedEventArgs e)
