@@ -13,5 +13,7 @@ D:\CPKProjects\DocWriterStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreate
 D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.exe.config
 D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.exe
 D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\bin\Debug\PrjLicenseFileCreater.pdb
+D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.csproj.AssemblyReference.cache
+D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.csproj.CoreCompileInputs.cache
 D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.exe
 D:\CPKProjects\DocsPalStd\PrjLicenseFileCreater\obj\Debug\PrjLicenseFileCreater.pdb
