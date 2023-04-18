@@ -12,3 +12,5 @@ D:\CPKProjects\DocsPalStd\DocsPal\bin\Debug\License.dll
 D:\CPKProjects\DocsPalStd\DocsPal\bin\Debug\License.pdb
 D:\CPKProjects\DocsPalStd\License\obj\Debug\License.dll
 D:\CPKProjects\DocsPalStd\License\obj\Debug\License.pdb
+D:\CPKProjects\DocsPalStd\License\obj\Debug\License.csproj.AssemblyReference.cache
+D:\CPKProjects\DocsPalStd\License\obj\Debug\License.csproj.CoreCompileInputs.cache
