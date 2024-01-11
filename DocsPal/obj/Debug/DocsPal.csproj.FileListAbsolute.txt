@@ -37,7 +37,6 @@ D:\CPKProjects\DocsPalStd\DocsPal\bin\Debug\DotNetKit.Wpf.AutoCompleteComboBox.d
 D:\CPKProjects\DocsPalStd\DocsPal\bin\Debug\itextsharp.dll
 D:\CPKProjects\DocsPalStd\DocsPal\bin\Debug\System.Data.SQLite.dll
 D:\CPKProjects\DocsPalStd\DocsPal\bin\Debug\License.pdb
-D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\DocsPal.csproj.AssemblyReference.cache
 D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\frmBackupNDbClean.baml
 D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\frmLicenseInformation.baml
 D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\frmPageSettings.baml
@@ -60,7 +59,6 @@ D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\DocWriter.g.resources
 D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\DocWriter.frmPrntCheque.resources
 D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\DocWriter.Properties.Resources.resources
 D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\DocsPal.csproj.GenerateResource.cache
-D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\DocsPal.csproj.CoreCompileInputs.cache
-D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\DocsPal.csproj.CopyComplete
 D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\DocWriter.exe
 D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\DocWriter.pdb
+D:\CPKProjects\DocsPalStd\DocsPal\obj\Debug\DocsPal.csprojResolveAssemblyReference.cache
